@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/3bb9d2c9bc.js" crossorigin="anonymous"></script>
+  <!-- Glidejs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css">
+
+  <!-- Custom StyleSheet -->
+  <title>Lifeline Express</title>
+
+  <script
+    src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
+    data-auto-replace-svg="nest"
+  ></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/contactus.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function() {
+          // https://dashboard.emailjs.com/admin/integration
+          emailjs.init('user_6GzKH4U36UgVIlMswmMCI');
+      })();
+  </script>
+  <script type="text/javascript">
+      window.onload = function() {
+          document.getElementById('myForm').addEventListener('submit', function(event) {
+              event.preventDefault();
+              var fname = document.getElementById("fname").value
+              var fmsg = document.getElementById("fmsg").value
+              var femail = document.getElementById("femail").value
+              var fcontact = document.getElementById("fcontact").value
+              emailjs.send("service_6le3hh7","template_jac44qn",{
+                  to_name: "GCC",
+                  from_name: fname,
+                  message: fmsg,
+                  phone: fcontact,
+                  email: femail,
+              }).then(function() {
+                    alert("EMAIL SENT")
+                    location.reload();
+                    console.log('SUCCESS!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+          });
+      }
+  </script>
+  
+</head>
+
+<body >
+    <nav style="background-color: transparent;">
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-heartbeat"> </i>
+          Lifeline Express</a
+        >
+    </nav>
+    <section class="section promotion contactus">
+      
+      <div class="background">
+        <div class="container contactus">
+          <div class="screen">
+            <div class="screen-header">
+              <div class="screen-header-left">
+                <div class="screen-header-button close"></div>
+                <div class="screen-header-button maximize"></div>
+                <div class="screen-header-button minimize"></div>
+              </div>
+              <div class="screen-header-right">
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="screen-body-item left">
+                <div class="app-title">
+                  <span>CONTACT</span>
+                  <span>US</span>
+                </div>
+                <div class="app-contact">Contact Info : lifeline_express@gmail.com</div>
+              </div>
+              <form id="myForm">
+              <div class="screen-body-item">
+                <div class="app-form">
+                  <div class="app-form-group">
+                    <input class="app-form-control contactus" placeholder="NAME" id="fname">
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control contactus" placeholder="EMAIL" id="femail">
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control contactus" placeholder="CONTACT No." id="fcontact">
+                  </div>
+                  <div class="app-form-group message">
+                    <input class="app-form-control contactus" placeholder="MESSAGE" id="fmsg">
+                  </div>
+                  <div class="app-form-group buttons">
+                    <a href="contactus" class="app-form-button contactus">CANCEL</a>
+                    <input type="submit" class="app-form-button contactus" value="SEND">
+                  </div>
+                </div>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </section>
+    
+    <!-- Footer -->
+    <footer id="footer" class="section footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-center">
+          <h3>EXTRAS</h3>
+          <a href="#">Brands</a>
+          <a href="#">Gift Smiles</a>
+          <a href="#">Affiliate</a>
+          <a href="#">Specials</a>
+          <a href="#">Help</a>
+        </div>
+        <div class="footer-center">
+          <h3>INFORMATION</h3>
+          <a href="/aboutus">About Us</a>
+          <a href="/privacypolicy">Privacy Policy</a>
+          <a href="/terms&conditions">Terms & Conditions</a>
+          <a href="/contactus">Contact Us</a>
+        </div>
+        <div class="footer-center">
+          <h3>MY ACCOUNT</h3>
+          <a href="/profile">My Account</a>
+          <a href="/order">Order History</a>
+          <a href="/wishlist">Wish List</a>
+          <a href="#">Recommendations</a>
+          <a href="#">Returns</a>
+        </div>
+        <div class="footer-center">
+          <h3>CONTACT US</h3>
+          <div>
+            <span>
+              <i class="far fa-envelope"></i>
+            </span>
+            lifeline_express@gmail.com
+          </div>
+          
+         </div>
+        </div>
+       </div>
+      </div>
+    </footer>
+    <!-- Glidejs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/home.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+
+</html>
